@@ -1,0 +1,23 @@
+<!--<p>-->
+  <!--problem-list works!-->
+<!--</p>-->
+
+
+<div class="container">
+  <app-new-problem></app-new-problem>
+  <div class="list-group">
+    <!-- * means directive, ngFor is a for loop-->
+    <!--Q: why use [] for routerLink-->
+    <!--looks we have an array-->
+    <!--Q why it is not + to concatenate -->
+    <!--looks it automatically generate a slash if we have a comma-->
+    <a class="list-group-item" *ngFor="let problem of problems" [routerLink]= "['/problems', problem.id]">
+
+      <!--{{}} means binding data from model to html -->
+    <span class="{{'pull-left badge difficulty diff-' + problem.difficulty.toLocaleLowerCase()}}">
+				{{problem.difficulty}}
+			</span>
+    <strong class="title">{{problem.id}}. {{problem.name}}</strong>
+    </a>
+  </div>
+</div>

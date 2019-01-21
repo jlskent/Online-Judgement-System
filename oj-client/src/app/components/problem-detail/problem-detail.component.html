@@ -1,0 +1,24 @@
+<!--<p>-->
+  <!--problem-detail works!ornot-->
+
+<div class="container" *ngIf= "problem">
+ <!-- if we have small device, the content will take over the whole screen
+  if we have a medium size screen, it takes4/12
+  (bootstrap divides our screen into 12 cols) -->
+    <div class="row">
+       <div class="col-sm-12 col-md-4">
+           <div>
+             <h2>
+               {{problem.id}}.{{problem.name}}
+             </h2>
+             <p>
+               {{problem.desc}}
+             </p>
+           </div>
+       </div>
+      <!--editor-->
+       <div class="hidden-xs col-sm-12 col-md-8">
+         <app-editor></app-editor>
+       </div>
+   </div>
+</div>
